@@ -66,7 +66,8 @@ defmodule LocalUpload.MixProject do
       # typed_struct is pulled in by ex_example and provides TypedStruct
       {:typed_struct, "~> 0.3", override: true},
       {:ex_example, "~> 0.1.1"},
-      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false}
+      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:gt_bridge, "~> 0.14.0"}
     ]
   end
 
