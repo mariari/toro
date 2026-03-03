@@ -45,6 +45,8 @@ defmodule LocalUpload.EventStore.Event do
     builder.text()
     |> Text.title("Event")
     |> Text.priority(1)
+    |> Text.monospace()
+    |> Text.font_size(14)
     |> Text.string(fn ->
       data_str =
         self.data
