@@ -16,7 +16,7 @@ defmodule EPomfResponse do
     file_entry = %{
       hash: upload.hash,
       name: upload.original_name,
-      url: "http://localhost:4000/f/#{upload.stored_name}",
+      url: "http://localhost:4000/u/#{upload.stored_name}",
       size: upload.size
     }
 
@@ -28,7 +28,7 @@ defmodule EPomfResponse do
 
     [file] = json["files"]
     assert file.name == "test_vomit.txt"
-    assert String.contains?(file.url, "/f/")
+    assert String.contains?(file.url, "/u/")
 
     json
   end

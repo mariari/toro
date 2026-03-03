@@ -28,6 +28,13 @@ defmodule LocalUploadWeb.Router do
     get "/:name", FileController, :show
   end
 
+  # Short alias for upload page
+  scope "/u", LocalUploadWeb do
+    pipe_through :browser
+
+    get "/:stored_name", UploadController, :show
+  end
+
   # Web UI
   scope "/", LocalUploadWeb do
     pipe_through :browser

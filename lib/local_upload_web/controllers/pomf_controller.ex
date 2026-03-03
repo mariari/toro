@@ -43,7 +43,7 @@ defmodule LocalUploadWeb.PomfController do
           %{
             hash: upload.hash,
             name: upload.original_name,
-            url: "#{base_url}/f/#{upload.stored_name}",
+            url: "#{base_url}/u/#{upload.stored_name}",
             size: upload.size
           }
         end

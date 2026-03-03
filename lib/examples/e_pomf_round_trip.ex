@@ -41,7 +41,7 @@ defmodule EPomfRoundTrip do
     assert file["size"] == byte_size(content)
 
     # extract stored name from URL
-    "/f/" <> stored_name = URI.parse(file["url"]).path
+    "/u/" <> stored_name = URI.parse(file["url"]).path
 
     # download via file controller
     download_conn =
