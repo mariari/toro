@@ -54,6 +54,7 @@
                   src={~p"/f/#{upload.thumb_name}"}
                   alt={upload.original_name}
                   class="w-10 h-10 object-cover rounded"
+                  onerror="this.style.display='none'"
                 />
                 {upload.original_name}
               </a>
@@ -93,6 +94,7 @@
                   src={~p"/f/#{upload.thumb_name}"}
                   alt={upload.original_name}
                   class="w-10 h-10 object-cover rounded"
+                  onerror="this.style.display='none'"
                 />
                 {upload.original_name}
               </a>

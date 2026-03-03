@@ -10,25 +10,32 @@
 
     <%!-- File display --%>
     <div class="mb-6">
+      <div :if={not @file_exists?} class="alert alert-warning">
+        File missing from disk.
+      </div>
       <img
-        :if={String.starts_with?(@upload.content_type, "image/")}
+        :if={@file_exists? and String.starts_with?(@upload.content_type, "image/")}
         src={~p"/f/#{@upload.stored_name}"}
         alt={@upload.original_name}
         class="max-w-full max-h-96 rounded-lg shadow"
       />
       <video
-        :if={String.starts_with?(@upload.content_type, "video/")}
+        :if={@file_exists? and String.starts_with?(@upload.content_type, "video/")}
         src={~p"/f/#{@upload.stored_name}"}
         controls
         class="max-w-full rounded-lg"
       >
       </video>
       <audio
-        :if={String.starts_with?(@upload.content_type, "audio/")}
+        :if={@file_exists? and String.starts_with?(@upload.content_type, "audio/")}
         src={~p"/f/#{@upload.stored_name}"}
         controls
       >
       </audio>
+      <pre
+        :if={@text_content}
+        class="bg-base-200 p-4 rounded-lg overflow-x-auto text-sm"
+      >{@text_content}</pre>
     </div>
 
     <%!-- File info and actions --%>
