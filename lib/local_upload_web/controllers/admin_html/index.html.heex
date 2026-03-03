@@ -59,13 +59,14 @@
         class="aspect-square bg-base-200 rounded overflow-hidden flex items-center justify-center"
       >
         <img
-          :if={String.starts_with?(upload.content_type, "image/")}
-          src={~p"/f/#{upload.stored_name}"}
+          :if={upload.thumb_name}
+          src={~p"/f/#{upload.thumb_name}"}
           alt={upload.original_name}
           class="w-full h-full object-cover"
+          onerror="this.style.display='none'"
         />
         <span
-          :if={!String.starts_with?(upload.content_type, "image/")}
+          :if={!upload.thumb_name}
           class="text-center text-base-content/60"
         >
           <span class="text-2xl block">{file_icon(upload.content_type)}</span>
