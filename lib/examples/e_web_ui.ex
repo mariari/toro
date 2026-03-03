@@ -38,7 +38,7 @@ defmodule EWebUI do
       |> Phoenix.ConnTest.get("/browse")
 
     assert conn.status == 200
-    assert conn.resp_body =~ "Browse Uploads"
+    assert conn.resp_body =~ "Recent Uploads"
     assert conn.resp_body =~ "test_vomit.txt"
 
     conn
