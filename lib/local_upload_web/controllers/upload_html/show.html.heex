@@ -6,6 +6,7 @@
     <p class="text-base-content/60 mb-6">
       Vomited by <strong>{display_uploader(@upload.uploader, @authenticated?)}</strong>
       on {Calendar.strftime(@upload.inserted_at, "%Y-%m-%d %H:%M")}
+      · <a href={~p"/"} class="link link-primary link-hover">Back to Home</a>
     </p>
 
     <%!-- File display --%>
@@ -122,8 +123,5 @@
       </div>
     </div>
 
-    <div class="mt-6">
-      <a href={~p"/"} class="btn btn-outline btn-sm">Back to Home</a>
-    </div>
   </div>
 </div>
